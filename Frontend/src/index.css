@@ -1,0 +1,122 @@
+/* ── Google Fonts ─────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Glass panel ──────────────────────────────────────── */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+/* ── Primary gradient button ──────────────────────────── */
+.btn-primary {
+  background: linear-gradient(135deg, #8A6BBF 0%, #a98de0 60%, #D0BCFF 100%);
+  transition: all 0.22s ease;
+}
+.btn-primary:hover {
+  box-shadow: 0 6px 24px rgba(138, 107, 191, 0.42);
+  transform: translateY(-1px) scale(0.99);
+}
+.btn-primary:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* ── Gradient text ────────────────────────────────────── */
+.text-gradient {
+  background: linear-gradient(120deg, #6B4FA8 0%, #8A6BBF 45%, #D4A74B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Section label pill ───────────────────────────────── */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgba(138,107,191,0.1) 0%, rgba(208,188,255,0.18) 100%);
+  border: 1px solid rgba(138,107,191,0.22);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8A6BBF;
+}
+
+/* ── Decorative heading underline ─────────────────────── */
+.heading-underline {
+  position: relative;
+  display: inline-block;
+}
+.heading-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 48px;
+  height: 3px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #8A6BBF, #D0BCFF);
+}
+
+/* ── Nav link underline slide ─────────────────────────── */
+.nav-link {
+  position: relative;
+  padding-bottom: 2px;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  border-radius: 9999px;
+  background: #8A6BBF;
+  transition: width 0.25s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ── Product card lift ────────────────────────────────── */
+.product-card {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.3s ease;
+}
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(138, 107, 191, 0.14);
+}
+
+/* ── Hero ambient gradient ────────────────────────────── */
+.hero-gradient {
+  background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(138,107,191,0.09) 0%, transparent 70%),
+              radial-gradient(ellipse 50% 40% at 90% 50%, rgba(212,167,75,0.06) 0%, transparent 60%),
+              #FFFFFF;
+}
+
+/* ── Auth field slide-in ──────────────────────────────── */
+@keyframes authFieldIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.auth-field-animate {
+  animation: authFieldIn 0.25s ease forwards;
+}
+
+/* ── Subtle fade-up for sections ─────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+  animation: fadeUp 0.5s ease forwards;
+}

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lumina Dashboard - Inventory</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@500&amp;family=Hanken+Grotesk:wght@500;600;700&amp;family=Inter:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#131b2e",
+                        "outline": "#6c797d",
+                        "surface-container": "#eceef0",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#6b38d4",
+                        "surface-bright": "#f7f9fb",
+                        "on-primary-fixed-variant": "#004e5a",
+                        "primary-container": "#00bdd6",
+                        "surface-dim": "#d8dadc",
+                        "on-tertiary-fixed-variant": "#3f465c",
+                        "surface-variant": "#e0e3e5",
+                        "surface-tint": "#006877",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#8455ef",
+                        "secondary-fixed-dim": "#d0bcff",
+                        "background": "#f7f9fb",
+                        "inverse-primary": "#43d8f2",
+                        "primary": "#006877",
+                        "surface-container-low": "#f2f4f6",
+                        "on-tertiary-container": "#384055",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#e6e8ea",
+                        "on-surface": "#191c1e",
+                        "inverse-on-surface": "#eff1f3",
+                        "tertiary-container": "#a4acc5",
+                        "inverse-surface": "#2d3133",
+                        "on-surface-variant": "#3c494c",
+                        "on-secondary-fixed-variant": "#5516be",
+                        "on-background": "#191c1e",
+                        "tertiary-fixed-dim": "#bec6e0",
+                        "on-secondary-container": "#fffbff",
+                        "on-primary-container": "#004752",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#bbc9cc",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#565e74",
+                        "secondary-fixed": "#e9ddff",
+                        "primary-fixed": "#a2eeff",
+                        "surface": "#f7f9fb",
+                        "on-primary-fixed": "#001f25",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#dae2fd",
+                        "surface-container-highest": "#e0e3e5",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#43d8f2",
+                        "on-secondary-fixed": "#23005c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "base": "8px",
+                        "container-max": "1280px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Hanken Grotesk"],
+                        "title-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Geist"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom Utilities to support design guidance */
+        .glass-panel {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-top: 1px solid rgba(255, 255, 255, 0.8);
+            border-left: 1px solid rgba(255, 255, 255, 0.8);
+            border-right: 1px solid rgba(226, 232, 240, 0.3);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.3);
+            box-shadow: 0 10px 40px -10px rgba(25, 28, 30, 0.04);
+        }
+        
+        /* Ensure inputs follow outline focus rules */
+        input:focus {
+            outline: none;
+            border-color: #006877; /* primary */
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen overflow-x-hidden">
+<!-- Decorative Ambient Background Blobs (subtle) -->
+<div class="fixed top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-surface-container-highest/30 blur-[100px] pointer-events-none -z-10"></div>
+<div class="fixed bottom-[-10%] right-[-5%] w-[40%] h-[40%] rounded-full bg-surface-container-low/50 blur-[100px] pointer-events-none -z-10"></div>
+<!-- SIDE NAV BAR -->
+<nav class="bg-surface-container-lowest/80 dark:bg-inverse-surface/80 backdrop-blur-xl font-body-md text-body-md h-screen w-64 border-r border-white/20 border-r border-outline-variant/20 shadow-sm fixed left-0 top-0 h-full z-40 flex flex-col pt-8 pb-6 px-4">
+<!-- Header area within Sidenav -->
+<div class="flex flex-col items-start px-2 mb-10">
+<div class="w-12 h-12 rounded-full overflow-hidden mb-4 border border-outline-variant/20 bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-2xl">account_circle</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-inverse-primary tracking-tight">Lumina Seller</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Premium Dashboard</p>
+</div>
+<!-- Navigation Links -->
+<ul class="flex flex-col gap-2 flex-grow w-full">
+<!-- Overview (Inactive) -->
+<li>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-on-surface-variant dark:text-outline hover:bg-surface-container-high/50 dark:hover:bg-surface-variant/20 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Overview</span>
+</a>
+</li>
+<!-- Inventory (Active) -->
+<li>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-primary dark:text-inverse-primary font-bold border-r-2 border-primary hover:bg-surface-container-high/50 dark:hover:bg-surface-variant/20 transition-all transform scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2" data-weight="fill" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span>Inventory</span>
+</a>
+</li>
+<!-- Orders (Inactive) -->
+<li>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-on-surface-variant dark:text-outline hover:bg-surface-container-high/50 dark:hover:bg-surface-variant/20 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span>Orders</span>
+</a>
+</li>
+<!-- Settings (Inactive) -->
+<li>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-on-surface-variant dark:text-outline hover:bg-surface-container-high/50 dark:hover:bg-surface-variant/20 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</li>
+</ul>
+<!-- CTA Area -->
+<div class="mt-auto px-2 pt-6 border-t border-outline-variant/10">
+<button class="w-full py-2.5 px-4 rounded-lg border border-outline-variant/30 text-on-surface font-label-sm text-label-sm hover:bg-surface-container transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">swap_horiz</span>
+                Switch to Buyer
+            </button>
+</div>
+</nav>
+<!-- TOP NAV BAR -->
+<header class="bg-surface-bright/70 dark:bg-surface-dim/70 backdrop-blur-2xl font-title-md text-title-md h-16 w-full border-b border-outline-variant/10 fixed top-0 right-0 left-64 h-16 px-gutter flex items-center justify-between z-30 ml-64" style="width: calc(100% - 256px);">
+<!-- Search Bar (on_left) -->
+<div class="flex-1 max-w-md relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[20px] pointer-events-none">search</span>
+<input class="w-full bg-surface-container-lowest/50 border border-outline-variant/20 rounded-full py-2 pl-10 pr-4 font-body-md text-body-md text-on-surface placeholder:text-outline hover:bg-surface-container/40 transition-colors focus:bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Search inventory..." type="text"/>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full text-on-surface-variant hover:bg-surface-container/40 transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 rounded-full text-on-surface-variant hover:bg-surface-container/40 transition-colors flex items-center justify-center mr-4">
+<span class="material-symbols-outlined" data-icon="apps">apps</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/20 ml-2">
+<img alt="Seller Profile Avatar" class="w-full h-full object-cover" data-alt="A clean, professional headshot avatar of a minimalist person against a pure white background, soft studio lighting, creating a bright modern light-mode aesthetic. High clarity, simple." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHCF7H1iwD6XZebhYCycPOwO9zHqVS1vRGKUhtc2-FMyGgNZRxSZghC0k7lEJpCJ_fHJL4XAgsCT-IJmnfoM7w_RrPoQOHt58IE6bQZSAh0QVzoU6sbi7JMT5-3CHG1FkrPuayPPRvIFx_YsYPfT7L9Lc8AWYzWHUTZRwwR3WQScQmZAuyNis23ACLo3Q_1Wm5FUmQEKrFNe7l9OkBG25Nx9zNE73gmbAOi7Fn47i3ROn4Q4BYwME513tbH_rHTd5FHkNnCMGn1A"/>
+</div>
+</div>
+</header>
+<!-- MAIN CONTENT CANVAS -->
+<main class="ml-64 pt-16 min-h-screen">
+<div class="max-w-container-max mx-auto px-margin-desktop py-12">
+<!-- Page Header & Global Actions -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+<div>
+<h2 class="font-display-lg text-display-lg text-on-surface tracking-tight mb-2">Inventory Management</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Manage your active product listings, update stock levels, and monitor catalog performance across all categories.</p>
+</div>
+<button class="bg-primary text-on-primary font-body-md text-body-md py-3 px-6 rounded-lg whitespace-nowrap hover:bg-on-primary-fixed-variant transition-colors flex items-center gap-2 h-fit self-start md:self-auto shadow-sm">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                    Add New Product
+                </button>
+</div>
+<!-- Contextual Filters & Category Chips -->
+<div class="flex flex-wrap items-center gap-3 mb-8">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mr-2">Filter By Category:</span>
+<button class="bg-surface-container-low hover:bg-surface-container border border-outline-variant/10 text-on-surface font-label-sm text-label-sm py-2 px-4 rounded-full transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary">devices</span>
+                    Tech
+                </button>
+<button class="bg-surface-container-low hover:bg-surface-container border border-outline-variant/10 text-on-surface font-label-sm text-label-sm py-2 px-4 rounded-full transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary">restaurant</span>
+                    Food
+                </button>
+<button class="bg-surface-container-low hover:bg-surface-container border border-outline-variant/10 text-on-surface font-label-sm text-label-sm py-2 px-4 rounded-full transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary">apparel</span>
+                    Clothing
+                </button>
+<div class="w-[1px] h-6 bg-outline-variant/20 mx-2"></div>
+<button class="text-primary font-label-sm text-label-sm hover:underline transition-all">Clear Filters</button>
+</div>
+<!-- Glassmorphism Data Table Container -->
+<div class="glass-panel rounded-xl overflow-hidden w-full">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-surface-container/60 bg-surface-container-lowest/50">
+<th class="font-label-sm text-label-sm text-on-surface-variant font-semibold py-4 px-6 w-24">Image</th>
+<th class="font-label-sm text-label-sm text-on-surface-variant font-semibold py-4 px-6">Product Name</th>
+<th class="font-label-sm text-label-sm text-on-surface-variant font-semibold py-4 px-6">Category</th>
+<th class="font-label-sm text-label-sm text-on-surface-variant font-semibold py-4 px-6">Price</th>
+<th class="font-label-sm text-label-sm text-on-surface-variant font-semibold py-4 px-6">Stock Level</th>
+<th class="font-label-sm text-label-sm text-on-surface-variant font-semibold py-4 px-6">Status</th>
+<th class="font-label-sm text-label-sm text-on-surface-variant font-semibold py-4 px-6 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-on-surface">
+<!-- Row 1: Tech -->
+<tr class="border-b border-surface-container/60 hover:bg-surface-container-lowest/60 transition-colors group">
+<td class="py-4 px-6 align-middle">
+<div class="w-14 h-14 rounded-lg bg-white border border-outline-variant/10 overflow-hidden flex items-center justify-center p-1">
+<img alt="Wireless Headphones" class="max-w-full max-h-full object-contain" data-alt="A premium set of high-end wireless headphones, sleek minimalist design, matte black finish. Shot professionally against a pure, bright white background. Studio lighting, soft shadows, extremely clean e-commerce product photography style. Digital freshness, high clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrOVCG-a2R1aDJiWiEfWXxaE61RYrvnsq41bwxbyG6BOsB8SIRIk5SokSiladcU2Ogjta8q7CvpHUmcHuIr48N-hqMWC72sG2KC45dQquGO4Pdn33BSgFy9xBO_JETLPzltpSJjW1CWpJ9jyRCIQhwVe5FcaHubeoXZHccHCaFMunzjDyWv9lNCJ_syySVFQWHvi7R00ShokB3U_3pg-17aC6zBrfkuI9nmJowFpXMGdvXtK_QfwhEEfgL33kRLAc5oP1azjjB5w"/>
+</div>
+</td>
+<td class="py-4 px-6 align-middle font-medium">Lumina Pro Wireless Headphones</td>
+<td class="py-4 px-6 align-middle text-on-surface-variant">Tech</td>
+<td class="py-4 px-6 align-middle">$299.00</td>
+<td class="py-4 px-6 align-middle">45 Units</td>
+<td class="py-4 px-6 align-middle">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                                        Active
+                                    </span>
+</td>
+<td class="py-4 px-6 align-middle text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors" title="Edit">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-error hover:bg-error-container/30 transition-colors" title="Delete">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Food -->
+<tr class="border-b border-surface-container/60 hover:bg-surface-container-lowest/60 transition-colors group">
+<td class="py-4 px-6 align-middle">
+<div class="w-14 h-14 rounded-lg bg-white border border-outline-variant/10 overflow-hidden flex items-center justify-center p-1">
+<img alt="Artisan Sourdough" class="max-w-full max-h-full object-contain" data-alt="An artisan loaf of sourdough bread, perfectly golden crust, rustic texture, beautifully scored top. Shot professionally against a pure, bright white background. Studio lighting, highly detailed, clean modern minimalist food photography style, luminous aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNiBerZbngsXDDipzSfZEpA02seYWkLM5N4MIR38dZZL55DovJ6Myo18RXhBTIHveJKmeb2mnbY7EzmddjBUf88WZcWWIpn9xy5cl0ic2Kv_JzS1Jtwf_GSWXyESelUr_AMYRAqzgClD63Blsop26V3RzUNtIZqnKjLr78hxNO_VaQ2XyZCiK7_bPRFsbgBo16vFwi690lNgMVqwy1sdxvusokE9xXCckq7f_Y1UFSdu_HJXjLvJJM4FwSPVlRUD71omAmuJU8Jw"/>
+</div>
+</td>
+<td class="py-4 px-6 align-middle font-medium">Artisan Sourdough Loaf</td>
+<td class="py-4 px-6 align-middle text-on-surface-variant">Food</td>
+<td class="py-4 px-6 align-middle">$12.50</td>
+<td class="py-4 px-6 align-middle text-on-surface-variant">8 Units</td>
+<td class="py-4 px-6 align-middle">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+                                        Low Stock
+                                    </span>
+</td>
+<td class="py-4 px-6 align-middle text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors" title="Edit">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-error hover:bg-error-container/30 transition-colors" title="Delete">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Clothing -->
+<tr class="border-b border-surface-container/60 hover:bg-surface-container-lowest/60 transition-colors group">
+<td class="py-4 px-6 align-middle">
+<div class="w-14 h-14 rounded-lg bg-white border border-outline-variant/10 overflow-hidden flex items-center justify-center p-1">
+<img alt="Organic Cotton Tee" class="max-w-full max-h-full object-contain" data-alt="A neatly folded, premium organic cotton t-shirt in a soft neutral beige color, thick luxurious fabric. Shot professionally against a pure, bright white background. Minimalist, high-end fashion e-commerce photography style. Clean, organized, premium visual." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5uaJiVU-KT8l5C_4SShbY-10U0AWCC8DQ5XnQtrbl6R3GpxPNj2Bq93_uGH-oQ-wz1ZgxEHV3Ta10iFHNNfARv-DMYjWPnzJv3yhitgcjj-21AKAdDCFh40FAvlAq3yZ37zQXvw2Ezzx3Jw36ItvFkjd-nVjISWwMaaiMF7AFcCit106AMSncQuKf484mSJNZ1idASP0KK0yrvogHFhJvj1Fn_v0Z-NwK6oLnO2w_E-xTb2A7mRBInz_eHaMx0TggKMxTSRmNXg"/>
+</div>
+</td>
+<td class="py-4 px-6 align-middle font-medium">Essential Organic Cotton Tee</td>
+<td class="py-4 px-6 align-middle text-on-surface-variant">Clothing</td>
+<td class="py-4 px-6 align-middle">$45.00</td>
+<td class="py-4 px-6 align-middle">120 Units</td>
+<td class="py-4 px-6 align-middle">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                                        Active
+                                    </span>
+</td>
+<td class="py-4 px-6 align-middle text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors" title="Edit">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-error hover:bg-error-container/30 transition-colors" title="Delete">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Tech -->
+<tr class="hover:bg-surface-container-lowest/60 transition-colors group">
+<td class="py-4 px-6 align-middle">
+<div class="w-14 h-14 rounded-lg bg-white border border-outline-variant/10 overflow-hidden flex items-center justify-center p-1">
+<img alt="Mechanical Keyboard" class="max-w-full max-h-full object-contain" data-alt="A sleek, modern mechanical keyboard with white keycaps and a silver aluminum frame. Top-down view. Shot professionally against a pure, bright white background. Studio lighting, extreme clarity, sophisticated tech minimalism aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWeOGV9WWuYvZyckL7uaN9BQQ6CY-SHwmAweq5RXwdguNTOn7jLN7i9u_gfn3VZoOEJEAwirdNucA6zlxlEijA2NEm-raDOfBxunLKXHifZBMPtkPoU9-CD_2tDswy1YM--OVfYXAYSktSIN6RYr0sXFDNXxAcvcpO2RBBNI_bhAYJ_7tF-g1gV4le3xfJCOqPok-3KI3aExFT2UsFF-RYekeQ_7AjUZskeQPTXHq13sYs_qhvAp0RkoTeUH8jBQlfdkIJGxc-JQ"/>
+</div>
+</td>
+<td class="py-4 px-6 align-middle font-medium">Mechanical Keyboard X1</td>
+<td class="py-4 px-6 align-middle text-on-surface-variant">Tech</td>
+<td class="py-4 px-6 align-middle">$150.00</td>
+<td class="py-4 px-6 align-middle text-error font-medium">0 Units</td>
+<td class="py-4 px-6 align-middle">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                                        Out of Stock
+                                    </span>
+</td>
+<td class="py-4 px-6 align-middle text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors" title="Edit">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-error hover:bg-error-container/30 transition-colors" title="Delete">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination Minimalist -->
+<div class="border-t border-surface-container/60 bg-surface-container-lowest/30 p-4 flex items-center justify-between">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Showing 4 of 42 products</p>
+<div class="flex gap-2">
+<button class="px-3 py-1.5 rounded text-on-surface-variant border border-outline-variant/20 hover:bg-surface-container transition-colors disabled:opacity-50 font-label-sm text-label-sm" disabled="">Previous</button>
+<button class="px-3 py-1.5 rounded text-on-surface border border-outline-variant/20 hover:bg-surface-container transition-colors font-label-sm text-label-sm bg-surface-container-lowest">Next</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

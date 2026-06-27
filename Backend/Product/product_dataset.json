@@ -1,0 +1,422 @@
+[
+  {
+    "name": "Aura Wireless Noise-Cancelling Headphones",
+    "price": 12999.00,
+    "description": "Experience pure sound with industry-leading active noise cancellation. Features 30-hour battery life, touch controls, and ultra-comfortable ear cushions for all-day listening.",
+    "category": "Tech",
+    "images": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=800&auto=format&fit=crop",
+    "seller": { "$oid": "6a3a0e065c7b357e1c04b8ca" },
+    "isDeleted": false,
+    "aiSummary": {
+      "text": null,
+      "generatedAt": null,
+      "reviewCount": 0
+    }
+  },
+  {
+    "name": "Chronos Smartwatch Pro",
+    "price": 18499.50,
+    "description": "Stay connected and track your fitness with the Chronos Pro. Features a stunning OLED display, heart rate monitoring, sleep tracking, and a premium metal band.",
+    "category": "Tech",
+    "images": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=800&auto=format&fit=crop",
+    "seller": { "$oid": "6a3a0e065c7b357e1c04b8ca" },
+    "isDeleted": false,
+    "aiSummary": {
+      "text": null,
+      "generatedAt": null,
+      "reviewCount": 0
+    }
+  },
+  {
+    "name": "Apex Mechanical Gaming Keyboard",
+    "price": 8999.00,
+    "description": "Dominate your games with tactile switches and customizable RGB backlighting. Features an ergonomic wrist rest, programmable macro keys, and an aircraft-grade aluminum frame.",
+    "category": "Tech",
+    "images": "https://images.unsplash.com/photo-1595225476474-87563907a212?q=80&w=800&auto=format&fit=crop",
+    "seller": { "$oid": "6a3a0e065c7b357e1c04b8ca" },
+    "isDeleted": false,
+    "aiSummary": {
+      "text": null,
+      "generatedAt": null,
+      "reviewCount": 0
+    }
+  },
+  {
+    "name": "SkyHawk 4K Camera Drone",
+    "price": 45000.00,
+    "description": "Capture stunning 4K aerial footage with the SkyHawk Drone. Includes GPS tracking, 3-axis gimbal, auto-return home feature, and 40 minutes of flight time.",
+    "category": "Tech",
+    "images": "https://images.unsplash.com/photo-1507582020474-9a35b7d455d9?q=80&w=800&auto=format&fit=crop",
+    "seller": { "$oid": "6a3a0e065c7b357e1c04b8ca" },
+    "isDeleted": false,
+    "aiSummary": {
+      "text": null,
+      "generatedAt": null,
+      "reviewCount": 0
+    }
+  },
+  {
+    "name": "X-Pro Smartphone 256GB",
+    "price": 75999.00,
+    "description": "The ultimate smartphone experience. Featuring a 6.7-inch OLED display, triple camera setup, next-gen AI processor, and all-day battery life.",
+    "category": "Tech",
+    "images": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=800&auto=format&fit=crop",
+    "seller": { "$oid": "6a3a0e065c7b357e1c04b8ca" },
+    "isDeleted": false,
+    "aiSummary": {
+      "text": null,
+      "generatedAt": null,
+      "reviewCount": 0
+    }
+  },
+  {
+    "name": "Zenith Ultra-Thin Tablet",
+    "price": 32999.00,
+    "description": "Work and play on the go. The Zenith Tablet offers a vibrant 11-inch display, quad speakers, and supports stylus input for creative professionals.",
+    "category": "Tech",
+    "images": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=800&auto=format&fit=crop",
+    "seller": { "$oid": "6a3a0e065c7b357e1c04b8ca" },
+    "isDeleted": false,
+    "aiSummary": {
+      "text": null,
+      "generatedAt": null,
+      "reviewCount": 0
+    }
+  },
+  {
+    "name": "EliteBook Pro 15-inch Laptop",
+    "price": 115000.00,
+    "description": "A powerhouse for creators. Equipped with a 12-core processor, 32GB RAM, 1TB SSD, and a dedicated GPU for rendering and gaming.",
+    "category": "Tech",
+    "images": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?q=80&w=800&auto=format&fit=crop",
+    "seller": { "$oid": "6a3a0e065c7b357e1c04b8ca" },
+    "isDeleted": false,
+    "aiSummary": {
+      "text": null,
+      "generatedAt": null,
+      "reviewCount": 0
+    }
+  },
+  {
+    "name": "ErgoGrip Wireless Mouse",
+    "price": 3500.00,
+    "description": "Designed for comfort and precision. The ErgoGrip reduces wrist strain during long hours of work. Features silent clicks and adjustable DPI.",
+    "category": "Tech",
+    "images": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?q=80&w=800&auto=format&fit=crop",
+    "seller": { "$oid": "6a3a0e065c7b357e1c04b8ca" },
+    "isDeleted": false,
+    "aiSummary": {
+      "text": null,
+      "generatedAt": null,
+      "reviewCount": 0
+    }
+  },
+  {
+    "name": "Echo Home Smart Speaker",
+    "price": 4999.00,
+    "description": "Control your smart home and listen to high-fidelity audio with voice commands. Fits seamlessly into any room decor.",
+    "category": "Tech",
+    "images": "https://images.unsplash.com/photo-1543512214-318c7553f230?q=80&w=800&auto=format&fit=crop",
+    "seller": { "$oid": "6a3a0e065c7b357e1c04b8ca" },
+    "isDeleted": false,
+    "aiSummary": {
+      "text": null,
+      "generatedAt": null,
+      "reviewCount": 0
+    }
+  },
+  {
+    "name": "Visionary VR Headset",
+    "price": 28999.00,
+    "description": "Step into new worlds. Our standalone VR headset offers 4K resolution per eye, immersive 3D audio, and zero wires for absolute freedom.",
+    "category": "Tech",
+    "images": "https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?q=80&w=800&auto=format&fit=crop",
+    "seller": { "$oid": "6a3a0e065c7b357e1c04b8ca" },
+    "isDeleted": false,
+    "aiSummary": {
+      "text": null,
+      "generatedAt": null,
+      "reviewCount": 0
+    }
+  },
+  {
+    "name": "Premium Organic Raw Honey",
+    "price": 850.00,
+    "description": "Pure, unpasteurized, and ethically sourced organic honey. Perfect for sweetening tea, baking, or enjoying straight from the jar.",
+    "category": "Food",
+    "images": "https://images.unsplash.com/photo-1587049352847-4d4b12736e76?q=80&w=800&auto=format&fit=crop",
+    "seller": { "$oid": "6a3a0e065c7b357e1c04b8ca" },
+    "isDeleted": false,
+    "aiSummary": {
+      "text": null,
+      "generatedAt": null,
+      "reviewCount": 0
+    }
+  },
+  {
+    "name": "Artisanal Dark Roast Coffee Beans",
+    "price": 1250.00,
+    "description": "A bold and rich blend of ethically sourced Arabica beans. Roasted to perfection to deliver notes of dark chocolate and roasted caramel.",
+    "category": "Food",
+    "images": "https://images.unsplash.com/photo-1559525839-b184a4d698c7?q=80&w=800&auto=format&fit=crop",
+    "seller": { "$oid": "6a3a0e065c7b357e1c04b8ca" },
+    "isDeleted": false,
+    "aiSummary": {
+      "text": null,
+      "generatedAt": null,
+      "reviewCount": 0
+    }
+  },
+  {
+    "name": "Gourmet Roasted Mixed Nuts",
+    "price": 950.50,
+    "description": "A delicious and healthy mix of premium almonds, cashews, walnuts, and pistachios. Lightly roasted and seasoned with sea salt.",
+    "category": "Food",
+    "images": "https://images.unsplash.com/photo-1599577180575-81206f7df165?q=80&w=800&auto=format&fit=crop",
+    "seller": { "$oid": "6a3a0e065c7b357e1c04b8ca" },
+    "isDeleted": false,
+    "aiSummary": {
+      "text": null,
+      "generatedAt": null,
+      "reviewCount": 0
+    }
+  },
+  {
+    "name": "Artisan Sourdough Loaf",
+    "price": 350.00,
+    "description": "Freshly baked sourdough bread with a crispy crust and a soft, airy interior. Naturally fermented for a perfect tangy flavor.",
+    "category": "Food",
+    "images": "https://images.unsplash.com/photo-1589367920969-ab8e050eb0e9?q=80&w=800&auto=format&fit=crop",
+    "seller": { "$oid": "6a3a0e065c7b357e1c04b8ca" },
+    "isDeleted": false,
+    "aiSummary": {
+      "text": null,
+      "generatedAt": null,
+      "reviewCount": 0
+    }
+  },
+  {
+    "name": "Farm Fresh Strawberries (1kg)",
+    "price": 450.00,
+    "description": "Locally grown, hand-picked strawberries bursting with sweet and juicy flavor. Delivered fresh from the farm to your door.",
+    "category": "Food",
+    "images": "https://images.unsplash.com/photo-1518110924151-51829e06cd2e?q=80&w=800&auto=format&fit=crop",
+    "seller": { "$oid": "6a3a0e065c7b357e1c04b8ca" },
+    "isDeleted": false,
+    "aiSummary": {
+      "text": null,
+      "generatedAt": null,
+      "reviewCount": 0
+    }
+  },
+  {
+    "name": "Handcrafted Dark Chocolate Truffles",
+    "price": 1500.00,
+    "description": "A box of luxurious handmade chocolate truffles. Made with 70% single-origin dark chocolate and a creamy ganache center.",
+    "category": "Food",
+    "images": "https://images.unsplash.com/photo-1540331547168-8b63109225b7?q=80&w=800&auto=format&fit=crop",
+    "seller": { "$oid": "6a3a0e065c7b357e1c04b8ca" },
+    "isDeleted": false,
+    "aiSummary": {
+      "text": null,
+      "generatedAt": null,
+      "reviewCount": 0
+    }
+  },
+  {
+    "name": "Organic Extra Virgin Olive Oil",
+    "price": 1800.00,
+    "description": "Cold-pressed organic olive oil imported from Italy. Offers a robust, peppery flavor profile ideal for dressings and cooking.",
+    "category": "Food",
+    "images": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?q=80&w=800&auto=format&fit=crop",
+    "seller": { "$oid": "6a3a0e065c7b357e1c04b8ca" },
+    "isDeleted": false,
+    "aiSummary": {
+      "text": null,
+      "generatedAt": null,
+      "reviewCount": 0
+    }
+  },
+  {
+    "name": "Authentic Fire-Roasted Salsa",
+    "price": 400.00,
+    "description": "A bold and spicy salsa made from fire-roasted tomatoes, jalapeños, onions, and fresh cilantro. Perfect for tacos and chips.",
+    "category": "Food",
+    "images": "https://images.unsplash.com/photo-1597811905625-78e7dce2e90c?q=80&w=800&auto=format&fit=crop",
+    "seller": { "$oid": "6a3a0e065c7b357e1c04b8ca" },
+    "isDeleted": false,
+    "aiSummary": {
+      "text": null,
+      "generatedAt": null,
+      "reviewCount": 0
+    }
+  },
+  {
+    "name": "Ceremonial Grade Matcha Tea",
+    "price": 2200.00,
+    "description": "Premium organic matcha powder sourced directly from Kyoto, Japan. Delivers a smooth, rich umami flavor and a natural energy boost.",
+    "category": "Food",
+    "images": "https://images.unsplash.com/photo-1582782356885-37651a5a5455?q=80&w=800&auto=format&fit=crop",
+    "seller": { "$oid": "6a3a0e065c7b357e1c04b8ca" },
+    "isDeleted": false,
+    "aiSummary": {
+      "text": null,
+      "generatedAt": null,
+      "reviewCount": 0
+    }
+  },
+  {
+    "name": "Handmade Italian Fusilli Pasta",
+    "price": 320.00,
+    "description": "Traditional bronze-die extruded fusilli pasta. Made from 100% durum wheat semolina for perfect al dente texture every time.",
+    "category": "Food",
+    "images": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?q=80&w=800&auto=format&fit=crop",
+    "seller": { "$oid": "6a3a0e065c7b357e1c04b8ca" },
+    "isDeleted": false,
+    "aiSummary": {
+      "text": null,
+      "generatedAt": null,
+      "reviewCount": 0
+    }
+  },
+  {
+    "name": "Classic Vintage Denim Jacket",
+    "price": 4599.00,
+    "description": "A timeless wardrobe staple. This classic denim jacket features a relaxed fit, durable metal buttons, and multiple pockets. Perfect for layering.",
+    "category": "Clothing",
+    "images": "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?q=80&w=800&auto=format&fit=crop",
+    "seller": { "$oid": "6a3a0e065c7b357e1c04b8ca" },
+    "isDeleted": false,
+    "aiSummary": {
+      "text": null,
+      "generatedAt": null,
+      "reviewCount": 0
+    }
+  },
+  {
+    "name": "Velocity Running Shoes",
+    "price": 6299.00,
+    "description": "Lightweight, breathable, and designed for maximum speed and comfort. Features a responsive foam midsole and a durable rubber outsole.",
+    "category": "Clothing",
+    "images": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=800&auto=format&fit=crop",
+    "seller": { "$oid": "6a3a0e065c7b357e1c04b8ca" },
+    "isDeleted": false,
+    "aiSummary": {
+      "text": null,
+      "generatedAt": null,
+      "reviewCount": 0
+    }
+  },
+  {
+    "name": "Essential White Cotton T-Shirt",
+    "price": 999.00,
+    "description": "The perfect everyday t-shirt. Made from 100% organic cotton for a soft, breathable feel. Features a tailored fit.",
+    "category": "Clothing",
+    "images": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=800&auto=format&fit=crop",
+    "seller": { "$oid": "6a3a0e065c7b357e1c04b8ca" },
+    "isDeleted": false,
+    "aiSummary": {
+      "text": null,
+      "generatedAt": null,
+      "reviewCount": 0
+    }
+  },
+  {
+    "name": "Cozy Knit Winter Beanie",
+    "price": 799.00,
+    "description": "Keep warm in style with this soft knit beanie. Made from a premium wool blend, it offers a snug fit and excellent insulation.",
+    "category": "Clothing",
+    "images": "https://images.unsplash.com/photo-1576871337622-98d48d1cf531?q=80&w=800&auto=format&fit=crop",
+    "seller": { "$oid": "6a3a0e065c7b357e1c04b8ca" },
+    "isDeleted": false,
+    "aiSummary": {
+      "text": null,
+      "generatedAt": null,
+      "reviewCount": 0
+    }
+  },
+  {
+    "name": "Artisan Leather Crossbody Bag",
+    "price": 5499.00,
+    "description": "Handcrafted from genuine full-grain leather. This elegant crossbody bag features brass hardware and enough space for daily essentials.",
+    "category": "Clothing",
+    "images": "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=800&auto=format&fit=crop",
+    "seller": { "$oid": "6a3a0e065c7b357e1c04b8ca" },
+    "isDeleted": false,
+    "aiSummary": {
+      "text": null,
+      "generatedAt": null,
+      "reviewCount": 0
+    }
+  },
+  {
+    "name": "Men's Casual Button-Down Shirt",
+    "price": 1899.00,
+    "description": "A versatile long-sleeve shirt perfect for casual Fridays or weekend outings. Made from lightweight, breathable linen blend.",
+    "category": "Clothing",
+    "images": "https://images.unsplash.com/photo-1596755094514-f87e32f85e23?q=80&w=800&auto=format&fit=crop",
+    "seller": { "$oid": "6a3a0e065c7b357e1c04b8ca" },
+    "isDeleted": false,
+    "aiSummary": {
+      "text": null,
+      "generatedAt": null,
+      "reviewCount": 0
+    }
+  },
+  {
+    "name": "Women's Floral Summer Dress",
+    "price": 2499.00,
+    "description": "A breezy, flowy sundress with a vibrant floral pattern. Features adjustable straps and a flattering A-line silhouette.",
+    "category": "Clothing",
+    "images": "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?q=80&w=800&auto=format&fit=crop",
+    "seller": { "$oid": "6a3a0e065c7b357e1c04b8ca" },
+    "isDeleted": false,
+    "aiSummary": {
+      "text": null,
+      "generatedAt": null,
+      "reviewCount": 0
+    }
+  },
+  {
+    "name": "High-Waisted Mom Jeans",
+    "price": 2899.00,
+    "description": "Retro-inspired mom jeans featuring a flattering high waist, relaxed fit through the leg, and a slightly tapered ankle.",
+    "category": "Clothing",
+    "images": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=800&auto=format&fit=crop",
+    "seller": { "$oid": "6a3a0e065c7b357e1c04b8ca" },
+    "isDeleted": false,
+    "aiSummary": {
+      "text": null,
+      "generatedAt": null,
+      "reviewCount": 0
+    }
+  },
+  {
+    "name": "Classic Aviator Sunglasses",
+    "price": 1499.00,
+    "description": "Timeless aviator shades featuring polarized lenses for UV protection and a lightweight, durable metal frame.",
+    "category": "Clothing",
+    "images": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?q=80&w=800&auto=format&fit=crop",
+    "seller": { "$oid": "6a3a0e065c7b357e1c04b8ca" },
+    "isDeleted": false,
+    "aiSummary": {
+      "text": null,
+      "generatedAt": null,
+      "reviewCount": 0
+    }
+  },
+  {
+    "name": "Comfort Cotton Socks (3-Pack)",
+    "price": 499.00,
+    "description": "A pack of three incredibly soft, moisture-wicking crew socks. Designed with reinforced heels and toes for long-lasting durability.",
+    "category": "Clothing",
+    "images": "https://images.unsplash.com/photo-1582966772680-860e372bb558?q=80&w=800&auto=format&fit=crop",
+    "seller": { "$oid": "6a3a0e065c7b357e1c04b8ca" },
+    "isDeleted": false,
+    "aiSummary": {
+      "text": null,
+      "generatedAt": null,
+      "reviewCount": 0
+    }
+  }
+]

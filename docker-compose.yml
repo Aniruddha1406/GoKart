@@ -1,0 +1,69 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:alpine
+    ports:
+      - "6380:6379"
+
+  api-gateway:
+    build: ./Backend/api-gateway
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - FRONTEND_URL=http://localhost:5173
+      - AUTH_SERVICE_URL=http://auth-service:3001
+      - ORDER_SERVICE_URL=http://order-service:3003
+      - PRODUCT_SERVICE_URL=http://product-service:3002
+    depends_on:
+      - auth-service
+      - order-service
+      - product-service
+
+  auth-service:
+    build: ./Backend/Auth
+    ports:
+      - "3001:3001"
+    env_file:
+      - ./Backend/Auth/.env
+    environment:
+      - PORT=3001
+      - REDIS_HOST=redis
+    depends_on:
+      - redis
+
+  product-service:
+    build: ./Backend/Product
+    ports:
+      - "3002:3002"
+    env_file:
+      - ./Backend/Product/.env
+    environment:
+      - PORT=3002
+
+  order-service:
+    build: ./Backend/Order
+    ports:
+      - "3003:3003"
+    env_file:
+      - ./Backend/Order/.env
+    environment:
+      - PORT=3003
+      - REDIS_HOST=redis
+    depends_on:
+      - redis
+
+  notification-service:
+    build: ./Backend/Notification
+    env_file:
+      - ./Backend/Notification/.env
+    environment:
+      - REDIS_HOST=redis
+    depends_on:
+      - redis
+
+  frontend:
+    build: ./Frontend
+    ports:
+      - "5173:80"

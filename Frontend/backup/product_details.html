@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AURA - Product Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Outfit:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary": "#765b00",
+                      "surface-tint": "#6750a4",
+                      "on-primary-fixed": "#22005d",
+                      "primary-fixed-dim": "#cfbcff",
+                      "on-tertiary-container": "#503d00",
+                      "surface-dim": "#ded8e0",
+                      "surface-container": "#f2ecf4",
+                      "on-secondary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "secondary-fixed": "#e9ddff",
+                      "primary": "#4f378a",
+                      "on-secondary-fixed": "#1f1635",
+                      "tertiary-fixed-dim": "#e7c365",
+                      "secondary-fixed-dim": "#cdc0e9",
+                      "on-tertiary-fixed-variant": "#594400",
+                      "secondary-container": "#e1d4fd",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-container": "#c9a74d",
+                      "surface-container-low": "#f8f2fa",
+                      "error-container": "#ffdad6",
+                      "background": "#fdf7ff",
+                      "primary-fixed": "#e9ddff",
+                      "outline": "#7a7582",
+                      "on-primary": "#ffffff",
+                      "on-surface": "#1d1b20",
+                      "inverse-surface": "#322f35",
+                      "on-tertiary-fixed": "#241a00",
+                      "primary-container": "#6750a4",
+                      "on-secondary-fixed-variant": "#4b4263",
+                      "tertiary-fixed": "#ffdf93",
+                      "inverse-primary": "#cfbcff",
+                      "on-primary-fixed-variant": "#4f378a",
+                      "surface-container-high": "#ece6ee",
+                      "on-surface-variant": "#494551",
+                      "on-error": "#ffffff",
+                      "surface-container-highest": "#e6e0e9",
+                      "on-secondary-container": "#645a7d",
+                      "inverse-on-surface": "#f5eff7",
+                      "secondary": "#63597c",
+                      "error": "#ba1a1a",
+                      "on-background": "#1d1b20",
+                      "on-primary-container": "#e0d2ff",
+                      "surface-bright": "#fdf7ff",
+                      "outline-variant": "#cbc4d2",
+                      "surface": "#fdf7ff",
+                      "surface-variant": "#e6e0e9"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-max": "1440px",
+                      "margin-mobile": "20px",
+                      "base": "8px",
+                      "section-gap": "120px",
+                      "gutter": "24px",
+                      "margin-desktop": "64px"
+              },
+              "fontFamily": {
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Outfit"
+                      ],
+                      "caption": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Outfit"
+                      ],
+                      "headline-lg": [
+                              "Outfit"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "display-sm": [
+                              "Outfit"
+                      ],
+                      "title-md": [
+                              "Outfit"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "72px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-sm": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "title-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+           font-variation-settings: 'FILL' 1;
+        }
+        
+        .glass-panel {
+            background: rgba(253, 247, 255, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        
+        .glass-btn {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #4f378a, #c9a74d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #4f378a, #6750a4);
+            box-shadow: 0 4px 14px 0 rgba(79, 55, 138, 0.39);
+        }
+        
+        .btn-primary:hover {
+            box-shadow: 0 6px 20px rgba(79, 55, 138, 0.23);
+        }
+        
+        /* Hide scrollbar for gallery thumbnails */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+      </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-2xl border-b border-white/20 dark:border-outline-variant/20 shadow-sm">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Logo -->
+<a class="font-display-sm text-display-sm font-bold tracking-tight text-on-surface dark:text-surface-bright" href="#">
+                AURA
+            </a>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex space-x-8 items-center h-full">
+<a class="font-label-md text-label-md text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 h-full flex items-center" href="#">Shop</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed transition-colors h-full flex items-center" href="#">Collections</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed transition-colors h-full flex items-center" href="#">New Arrivals</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed transition-colors h-full flex items-center" href="#">About</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center space-x-6 text-primary dark:text-primary-fixed font-label-md text-label-md">
+<button class="hover:opacity-80 transition-opacity scale-95 active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined text-[24px]">search</span>
+</button>
+<button class="hover:opacity-80 transition-opacity scale-95 active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined text-[24px]">person</span>
+</button>
+<button class="hover:opacity-80 transition-opacity scale-95 active:scale-90 transition-transform duration-200 relative">
+<span class="material-symbols-outlined text-[24px]">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-tertiary text-on-tertiary text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">2</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow pt-[120px] pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Breadcrumbs -->
+<nav class="flex items-center space-x-2 text-on-surface-variant mb-8 font-caption text-caption">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Shop</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">New Arrivals</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-semibold">Aether Wireless Headphones</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Gallery Section -->
+<div class="lg:col-span-7 flex flex-col-reverse md:flex-row gap-6">
+<!-- Thumbnails -->
+<div class="flex md:flex-col gap-4 overflow-x-auto md:overflow-y-auto no-scrollbar w-full md:w-24 shrink-0">
+<button class="w-20 h-24 md:w-24 md:h-32 rounded-lg overflow-hidden border-2 border-primary shrink-0 relative glass-panel">
+<div class="w-full h-full bg-cover bg-center" data-alt="A macro shot of a sleek, premium wireless headphone earcup showing brushed aluminum texture and soft white leather padding. Minimalist light-mode studio lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCteZBV4x-fje7pcXmHTzdQNWy5UdCVK375ldQ8Rwxz4XQPdiFqc3tSCF-NclmoMg3i651CwUDaYJb2KWdAXCK-5feBzVPU85lLw4vJtxbSkS5OKfevdBeu0DjgSs-18YcpuftS4aZ8XhxNwxfF3bnMA66bRgPKGp8UzM3mLUqCdhsatE2QecI7-I8-1LbFv1bBEqlNp16CP1yhkR9A5yzbwwi3A5Ndy8uiy0R3gBI5ML1uB5orSADc6nDbMPCefUn6epuDkkdMDUhi')"></div>
+</button>
+<button class="w-20 h-24 md:w-24 md:h-32 rounded-lg overflow-hidden border-2 border-transparent hover:border-outline-variant transition-colors shrink-0 relative glass-panel opacity-70 hover:opacity-100">
+<div class="w-full h-full bg-cover bg-center" data-alt="A side view of modern wireless over-ear headphones floating against a pure white background. High contrast, sharp edges, metallic details shining in bright light." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuACThVaRKNl8jtbnX0LzbonsRvtP4VssAKB5JwgMw6i6oV3AB6gNBYQ3WYn47LPeB0-9cjgSENIvQfIkA_nnoXVq6iTyT-mf3xiP5G1WOnwM1-V6QEmp9Nswf3lUoQlbsmw9xhVa9kVXBH-ppyY-v9Wk5KS4VZF-N1FemyrtBoUIQ68Dr-WLymVPK3NFYiByZCIWlMKsvS-jI8aMujBFx8r8BC8RTR0IZVVGJxXM2_pXDpXFmh_a47sxo2vlVrVLKXHVCkA3tiAPOpA')"></div>
+</button>
+<button class="w-20 h-24 md:w-24 md:h-32 rounded-lg overflow-hidden border-2 border-transparent hover:border-outline-variant transition-colors shrink-0 relative glass-panel opacity-70 hover:opacity-100">
+<div class="w-full h-full bg-cover bg-center" data-alt="Detailed close up of the control buttons on a premium white and silver wireless headphone. Clean aesthetic, soft shadows, pristine white background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB192wjGUh57UA-7aw__EleEUe5ePo4fPq6q7Fy-oJIDGnO7o8mNT7UE3SCvi_hH-FlC24WOMBEhgmc2xrcJzyNrAlAEqtGw2jwWuZBEENY_lrFkoIS8a_UMp916I5z6PeZj7eeQnzictxSYQQcQph0tx3bNYcanWO7cC4ETDWIHWs0X26yWPdHlwlDFa4EHLwjySE7_NU4_L_WWt20PsA6JAv3LvcJklu2vAib2BiKjcho86GkszE7KWLh5txSbXwms5LO1OWAjEIr')"></div>
+</button>
+<button class="w-20 h-24 md:w-24 md:h-32 rounded-lg overflow-hidden border-2 border-transparent hover:border-outline-variant transition-colors shrink-0 relative glass-panel opacity-70 hover:opacity-100">
+<div class="w-full h-full bg-cover bg-center" data-alt="A lifestyle shot of premium headphones resting on a minimalist concrete desk next to a modern glass cup. Bright, airy, editorial style photography." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB_-MAZlRt-U0S9UcXrNyCn2_JuulU96le3t9hGrdkCMc-8REL5yuWmSgA-67HBT8pPCHmepTrPHfprO0OfzO71369VNSS46x2DJjhWmJZGJP_k_5wyYOP5wHw8DYat7K339V9TCuxztoO0_TN94C21i-tl3hnvUedviRfzt08qSDok6WwqVALMWByJ5HDCWBEZuwlPVxs0Bjtlc1WTDeYjFn_09Xp55gDUi6eAj-UoLipZCw0hCfTw5zMPCtBpbCO0fHJQTX2h2sYy')"></div>
+</button>
+</div>
+<!-- Main Image -->
+<div class="w-full rounded-2xl overflow-hidden bg-surface-container-low aspect-square md:aspect-auto relative glass-panel flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="A high-end product shot of Aether Wireless Headphones in pristine white and brushed silver. The headphones are perfectly centered, angled slightly to show the plush ear cushions. The lighting is soft and diffuse, creating a clean, airy, high-key minimalist aesthetic with no harsh shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArOk7REjOQOndulEfUv4YmhnyTZUdnYHBGe1DziUX0dsfAy4lONPJJ0nXXVT8GJm2KE5H9OgX9Sn-Ri2epH7fIS9ll0qE09uiGjU8kiWRmrXrTDMJcF2oUMqx63e3ZA1rEyouqFvyNYMrXgAxc5OGK9YVtfLmxa51dBAJRzcabvDRFYOSUG6Qt2nYDFnvJ3DPXbzyjNS21Qjun4OwG0s_dp51nuFesSu2Q0EkmXnBj3tGOk_e-EcsBIGgxMCY-CYjv9vMQ51jMoJHf"/>
+<!-- Floating Tags -->
+<div class="absolute top-6 left-6 flex flex-col gap-2">
+<span class="bg-surface-container-lowest/80 backdrop-blur-md px-3 py-1 rounded-full font-caption text-caption text-primary border border-white/50 shadow-sm inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">new_releases</span> New Arrival
+                        </span>
+</div>
+</div>
+</div>
+<!-- Product Info Section -->
+<div class="lg:col-span-5 flex flex-col pt-4 lg:pt-0 lg:pl-8">
+<div class="mb-6">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-on-surface mb-2 tracking-tight">Aether Wireless ANC Headphones</h1>
+<div class="flex items-center gap-4 mb-4">
+<span class="font-display-sm text-display-sm text-primary">$349.00</span>
+<div class="flex items-center gap-1 bg-surface-container-highest px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px] text-tertiary filled-icon">star</span>
+<span class="font-label-md text-label-md text-on-surface">4.9</span>
+<span class="font-caption text-caption text-on-surface-variant ml-1">(128 Reviews)</span>
+</div>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        Experience pure auditory clarity. The Aether series combines aerospace-grade aluminum with plush memory foam, delivering active noise cancellation in an impossibly light silhouette.
+                    </p>
+</div>
+<!-- Options -->
+<div class="space-y-6 mb-10">
+<!-- Color -->
+<div>
+<div class="flex justify-between items-center mb-3">
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Color</span>
+<span class="font-caption text-caption text-on-surface-variant">Nimbus White</span>
+</div>
+<div class="flex gap-3">
+<button class="w-10 h-10 rounded-full bg-white border-2 border-primary shadow-sm flex items-center justify-center p-1">
+<div class="w-full h-full rounded-full bg-[#F8F9FA] border border-outline-variant/30"></div>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface border-2 border-transparent hover:border-outline-variant shadow-sm flex items-center justify-center p-1 transition-colors">
+<div class="w-full h-full rounded-full bg-[#212529] border border-outline-variant/30"></div>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface border-2 border-transparent hover:border-outline-variant shadow-sm flex items-center justify-center p-1 transition-colors">
+<div class="w-full h-full rounded-full bg-[#E5E0D8] border border-outline-variant/30"></div>
+</button>
+</div>
+</div>
+<!-- Size/Variant (if applicable, using for edition) -->
+<div>
+<div class="flex justify-between items-center mb-3">
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Edition</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="py-3 px-4 rounded-xl border-2 border-primary bg-primary/5 font-label-md text-label-md text-primary text-center">
+                                Standard ANC
+                            </button>
+<button class="py-3 px-4 rounded-xl border border-outline-variant/50 hover:border-primary/50 bg-surface font-label-md text-label-md text-on-surface-variant text-center transition-colors">
+                                Studio Pro +$50
+                            </button>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-4 mb-10">
+<div class="flex gap-4">
+<button class="w-14 h-14 rounded-xl border border-outline-variant/50 flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-colors shrink-0">
+<span class="material-symbols-outlined text-[24px]">favorite</span>
+</button>
+<button class="flex-grow btn-primary text-on-primary rounded-xl font-label-md text-label-md py-4 hover:scale-[0.98] transition-transform flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+                            Add to Cart
+                        </button>
+</div>
+<button class="w-full py-4 rounded-xl glass-btn text-on-surface font-label-md text-label-md hover:bg-surface-variant/50 transition-colors">
+                        Buy it Now with AURA Pay
+                    </button>
+</div>
+<!-- Details Accordion -->
+<div class="border-t border-outline-variant/30 divide-y divide-outline-variant/30">
+<details class="group" open="">
+<summary class="flex justify-between items-center font-label-md text-label-md cursor-pointer list-none py-5">
+<span class="text-on-surface">Product Specifications</span>
+<span class="transition group-open:rotate-180">
+<span class="material-symbols-outlined">expand_more</span>
+</span>
+</summary>
+<div class="text-on-surface-variant font-body-md text-body-md pb-5 animate-fade-in-down">
+<ul class="space-y-2 list-disc list-inside">
+<li>Weight: 240g (8.4 oz)</li>
+<li>Battery Life: Up to 40 hours with ANC enabled</li>
+<li>Drivers: Custom 40mm Beryllium acoustic drivers</li>
+<li>Connectivity: Bluetooth 5.3, Multi-point</li>
+<li>Materials: Anodized aluminum, vegan leather</li>
+</ul>
+</div>
+</details>
+<details class="group">
+<summary class="flex justify-between items-center font-label-md text-label-md cursor-pointer list-none py-5">
+<span class="text-on-surface">Shipping &amp; Returns</span>
+<span class="transition group-open:rotate-180">
+<span class="material-symbols-outlined">expand_more</span>
+</span>
+</summary>
+<div class="text-on-surface-variant font-body-md text-body-md pb-5">
+<p class="mb-2">Complimentary express shipping on all orders above $200. Delivery typically takes 2-3 business days.</p>
+<p>We accept returns within 30 days of purchase for a full refund. Items must be in their original, unused condition.</p>
+</div>
+</details>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-surface-container-lowest dark:bg-surface-dim border-t border-outline-variant/30 w-full pt-section-gap pb-12">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface">AURA</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-caption text-caption text-on-surface-variant dark:text-outline hover:text-primary transition-colors opacity-100 hover:opacity-70" href="#">Privacy Policy</a>
+<a class="font-caption text-caption text-on-surface-variant dark:text-outline hover:text-primary transition-colors opacity-100 hover:opacity-70" href="#">Terms of Service</a>
+<a class="font-caption text-caption text-on-surface-variant dark:text-outline hover:text-primary transition-colors opacity-100 hover:opacity-70" href="#">Shipping &amp; Returns</a>
+<a class="font-caption text-caption text-on-surface-variant dark:text-outline hover:text-primary transition-colors opacity-100 hover:opacity-70" href="#">Contact Us</a>
+</div>
+<div class="font-caption text-caption text-primary dark:text-primary-fixed-dim">
+                © 2024 AURA Prismatic Precision. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

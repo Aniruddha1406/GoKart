@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AURA - Collections</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Outfit:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#765b00",
+                        "surface-tint": "#6750a4",
+                        "on-primary-fixed": "#22005d",
+                        "primary-fixed-dim": "#cfbcff",
+                        "on-tertiary-container": "#503d00",
+                        "surface-dim": "#ded8e0",
+                        "surface-container": "#f2ecf4",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#e9ddff",
+                        "primary": "#4f378a",
+                        "on-secondary-fixed": "#1f1635",
+                        "tertiary-fixed-dim": "#e7c365",
+                        "secondary-fixed-dim": "#cdc0e9",
+                        "on-tertiary-fixed-variant": "#594400",
+                        "secondary-container": "#e1d4fd",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#c9a74d",
+                        "surface-container-low": "#f8f2fa",
+                        "error-container": "#ffdad6",
+                        "background": "#fdf7ff",
+                        "primary-fixed": "#e9ddff",
+                        "outline": "#7a7582",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#1d1b20",
+                        "inverse-surface": "#322f35",
+                        "on-tertiary-fixed": "#241a00",
+                        "primary-container": "#6750a4",
+                        "on-secondary-fixed-variant": "#4b4263",
+                        "tertiary-fixed": "#ffdf93",
+                        "inverse-primary": "#cfbcff",
+                        "on-primary-fixed-variant": "#4f378a",
+                        "surface-container-high": "#ece6ee",
+                        "on-surface-variant": "#494551",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e6e0e9",
+                        "on-secondary-container": "#645a7d",
+                        "inverse-on-surface": "#f5eff7",
+                        "secondary": "#63597c",
+                        "error": "#ba1a1a",
+                        "on-background": "#1d1b20",
+                        "on-primary-container": "#e0d2ff",
+                        "surface-bright": "#fdf7ff",
+                        "outline-variant": "#cbc4d2",
+                        "surface": "#fdf7ff",
+                        "surface-variant": "#e6e0e9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "margin-mobile": "20px",
+                        "base": "8px",
+                        "section-gap": "120px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "display-lg": ["Outfit"],
+                        "caption": ["Inter"],
+                        "headline-lg-mobile": ["Outfit"],
+                        "headline-lg": ["Outfit"],
+                        "body-lg": ["Inter"],
+                        "display-sm": ["Outfit"],
+                        "title-md": ["Outfit"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-sm": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .hover-lift {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
+        }
+        .product-image-zoom {
+            transition: transform 0.5s ease;
+        }
+        .product-card:hover .product-image-zoom {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-2xl border-b border-white/20 dark:border-outline-variant/20 shadow-sm">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+<div class="font-display-sm text-display-sm font-bold tracking-tight text-on-surface dark:text-surface-bright">AURA</div>
+<div class="hidden md:flex items-center gap-8 font-label-md text-label-md">
+<a class="text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed transition-colors hover:opacity-80 transition-opacity scale-95 active:scale-90 transition-transform duration-200" href="#">Shop</a>
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 hover:opacity-80 transition-opacity scale-95 active:scale-90 transition-transform duration-200" href="#">Collections</a>
+<a class="text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed transition-colors hover:opacity-80 transition-opacity scale-95 active:scale-90 transition-transform duration-200" href="#">New Arrivals</a>
+<a class="text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed transition-colors hover:opacity-80 transition-opacity scale-95 active:scale-90 transition-transform duration-200" href="#">About</a>
+</div>
+<div class="flex items-center gap-4 text-primary dark:text-primary-fixed">
+<button class="hover:opacity-80 transition-opacity scale-95 active:scale-90 transition-transform duration-200"><span class="material-symbols-outlined">shopping_bag</span></button>
+<button class="hover:opacity-80 transition-opacity scale-95 active:scale-90 transition-transform duration-200"><span class="material-symbols-outlined">person</span></button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-[120px] pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full flex flex-col md:flex-row gap-gutter">
+<!-- Sidebar Filters -->
+<aside class="w-full md:w-64 flex-shrink-0 mb-8 md:mb-0">
+<div class="glass-panel rounded-xl p-6 sticky top-28">
+<h2 class="font-title-md text-title-md text-on-surface mb-6 border-b border-outline-variant/30 pb-4">Filters</h2>
+<!-- Category Filter -->
+<div class="mb-6">
+<h3 class="font-label-md text-label-md text-on-surface mb-3">Category</h3>
+<div class="space-y-2 font-body-md text-body-md text-on-surface-variant">
+<label class="flex items-center gap-2 cursor-pointer group"><input class="rounded border-outline text-primary focus:ring-primary rounded-sm transition-colors" type="checkbox"/><span class="group-hover:text-primary transition-colors">Outerwear</span></label>
+<label class="flex items-center gap-2 cursor-pointer group"><input checked="" class="rounded border-outline text-primary focus:ring-primary rounded-sm transition-colors" type="checkbox"/><span class="group-hover:text-primary transition-colors">Essentials</span></label>
+<label class="flex items-center gap-2 cursor-pointer group"><input class="rounded border-outline text-primary focus:ring-primary rounded-sm transition-colors" type="checkbox"/><span class="group-hover:text-primary transition-colors">Accessories</span></label>
+</div>
+</div>
+<!-- Price Range -->
+<div class="mb-6">
+<h3 class="font-label-md text-label-md text-on-surface mb-3">Price Range</h3>
+<div class="space-y-4">
+<input class="w-full accent-primary h-1 bg-surface-container-high rounded-full appearance-none" max="1000" min="0" type="range"/>
+<div class="flex items-center justify-between font-caption text-caption text-on-surface-variant">
+<span>$0</span>
+<span>$1000+</span>
+</div>
+</div>
+</div>
+<!-- Color Filter -->
+<div class="mb-6">
+<h3 class="font-label-md text-label-md text-on-surface mb-3">Color</h3>
+<div class="flex flex-wrap gap-2">
+<button class="w-6 h-6 rounded-full bg-[#000000] border border-outline-variant/30 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ring-offset-background"></button>
+<button class="w-6 h-6 rounded-full bg-[#FFFFFF] border border-outline-variant/30 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ring-offset-background"></button>
+<button class="w-6 h-6 rounded-full bg-[#E5E7EB] border border-outline-variant/30 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ring-offset-background"></button>
+<button class="w-6 h-6 rounded-full bg-[#3B82F6] border border-outline-variant/30 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ring-offset-background"></button>
+</div>
+</div>
+</div>
+</aside>
+<!-- Product Area -->
+<div class="flex-grow flex flex-col">
+<!-- Header & Sort -->
+<div class="flex flex-col sm:flex-row justify-between items-baseline mb-8 gap-4">
+<h1 class="font-display-sm text-display-sm md:font-display-lg md:text-display-lg text-on-surface">Collections</h1>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface-variant">Sort By:</span>
+<select class="bg-surface-container-low border-none rounded-lg font-body-md text-body-md text-on-surface py-2 pl-3 pr-8 focus:ring-2 focus:ring-primary">
+<option>Newest</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Popularity</option>
+</select>
+</div>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Product Card 1 -->
+<div class="group product-card relative flex flex-col hover-lift">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-surface-container-low mb-4">
+<img class="w-full h-full object-cover product-image-zoom" data-alt="A sleek, minimalist white ceramic vase sitting on a light gray concrete block in a highly lit, airy studio space. The lighting is pristine and diffused, highlighting the smooth curves of the product. The mood is serene, modern, and clinical yet elegant, emphasizing premium e-commerce photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAO2llMuytplHkcj0bkQCAVdYTn0vZaYDA7urpMG02zj0Wn8pTZva2rz_Dy3KUIMLZChy63vaazCR9WuDLjy7aAqFNFPArqKRnXkWCd5auTe_VptjAms6vJPKfifTZZkb4Eaw7kLBv1zrSoRi0D_NXjOeO9Kqp_zgMymn6QpiOvhfi_3Rzs_zgvhdR9-vQexWdk8xIjo7-yF2JP4I0kguJdMgzI0ZqEC90UNvxBTLuflDSPaUPw8mviVUGZUGnBFPmQT8iQTVdUSaN9"/>
+<div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<button class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 glass-panel px-6 py-2 rounded-full font-label-md text-label-md text-on-surface hover:bg-white hover:text-primary">
+                            Quick Add
+                        </button>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="font-caption text-caption text-on-surface-variant mb-1 uppercase tracking-wider">AURA Home</p>
+<h3 class="font-title-md text-title-md text-on-surface">Minimalist Ceramic Vase</h3>
+</div>
+<span class="font-body-md text-body-md text-primary font-medium">$120</span>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group product-card relative flex flex-col hover-lift">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-surface-container-low mb-4">
+<img class="w-full h-full object-cover product-image-zoom" data-alt="A structured, high-end black leather tote bag resting on a glass pedestal against a seamless white background. Soft, refractive light gently illuminates the premium texture of the leather and subtle silver hardware. The aesthetic is sharp, professional, and luxurious, fitting a modern minimalist brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCk3-Wo5SA4bM5LiKwR2ZOhxgvUHtvveBfkG19JXMzqAnN9XyBf2porrF7AOcAljWtF5-GBJgIarKg6wqLzYgMqRfEF-VQ76vPyys2BAEvDvBpJdKlUAmshloMVvG_Oeg2yCHaD0ZNzkMJARCZ69wJ2zma4x12UTp3U2eJegsvFKOQWZGRybGu_H1vHHK_J6yLmjcsCotci7nLPzdY2B8DtbW1ebspPBH3tWYtE7a5IxNQwmtrDoUGog8_RrWD0nF9i2TVNbvm2XFI"/>
+<div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<button class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 glass-panel px-6 py-2 rounded-full font-label-md text-label-md text-on-surface hover:bg-white hover:text-primary">
+                            Quick Add
+                        </button>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="font-caption text-caption text-on-surface-variant mb-1 uppercase tracking-wider">AURA Studio</p>
+<h3 class="font-title-md text-title-md text-on-surface">Structured Tote Bag</h3>
+</div>
+<span class="font-body-md text-body-md text-primary font-medium">$450</span>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group product-card relative flex flex-col hover-lift">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-surface-container-low mb-4">
+<img class="w-full h-full object-cover product-image-zoom" data-alt="A meticulously designed metallic smart watch with a matte silver finish, floating slightly above a white reflective surface. Crisp white lighting creates a slight glowing aura around the device. The composition is clean, tech-forward, and breathably spacious, reflecting a high-value e-commerce presentation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCntrqtNve-9alYnOTdTmpvUi68nU8d-JlePsfF1jGh3PFwjFOXcHMX7n-0FvnHY_OF2uRyjm5YOZT18F1huJWksHJL85iywfgVMGnfYRHRvvqqHWapS7UtOTtbh08bIp_hUzFcYfmbgNecuEw-bjwuVxA1o-6DJk2lP1vxft4YcNJqWOuCC203tfXtv7-niTAkefUvmsPXksz6aa_X3g1ccFg_9i2pv8-JQ7Kmag99qTlPiJycV8kdHNT20JPPe_sELdfJv-LLJN0f"/>
+<div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<button class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 glass-panel px-6 py-2 rounded-full font-label-md text-label-md text-on-surface hover:bg-white hover:text-primary">
+                            Quick Add
+                        </button>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="font-caption text-caption text-on-surface-variant mb-1 uppercase tracking-wider">AURA Tech</p>
+<h3 class="font-title-md text-title-md text-on-surface">Prism Smart Watch</h3>
+</div>
+<span class="font-body-md text-body-md text-primary font-medium">$299</span>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group product-card relative flex flex-col hover-lift">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-surface-container-low mb-4">
+<img class="w-full h-full object-cover product-image-zoom" data-alt="A soft, finely knitted cashmere sweater in a pale off-white hue, neatly folded on a clear acrylic block. The background is a stark, clean white, emphasizing the texture and warmth of the garment against the clinical setting. The lighting is soft and shadowless." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcqhQYG-d16dOxKIiIaISbh98oyC9WgvT4C_AnHAFB4AKaOs9oUpIGzcNjCT4AzD4Dd3tEZX51AcOI-9LJmQVcRSdk4pCQ6r-XVWDOeEPv7s6t3o1IExYEJfqEJcxaMwOxbf_BWJf0CDd4ozO9AfzeayJaCgCNumzs2Hv3ZKlIYA5lnNw95-SjF-HdR5NKE-yKX7iwQZz33nl9RKox7T_E8M-7GhwG9PewfyetAEFbkgLBWu89WdWXRtVQMpIYo3zWmd9B0d4AOuOe"/>
+<div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<button class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 glass-panel px-6 py-2 rounded-full font-label-md text-label-md text-on-surface hover:bg-white hover:text-primary">
+                            Quick Add
+                        </button>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="font-caption text-caption text-on-surface-variant mb-1 uppercase tracking-wider">AURA Essentials</p>
+<h3 class="font-title-md text-title-md text-on-surface">Cashmere Blend Knit</h3>
+</div>
+<span class="font-body-md text-body-md text-primary font-medium">$180</span>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="group product-card relative flex flex-col hover-lift">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-surface-container-low mb-4">
+<img class="w-full h-full object-cover product-image-zoom" data-alt="A pair of sleek, modern wireless over-ear headphones with a matte indigo finish, positioned dynamically as if floating in mid-air against a pure white background. The lighting catches the metallic accents, creating a sense of premium quality and technological precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCFKJT0wzszE8CDM7Q5dxzujC9HNacOoA6UTniuu2MBFkKHfoup4oV5BizNj2uJC_TyqxLfono3TF242W6MD3lGjYR5ARLDcC1tthTsmuuHCXqZF-zyzSUDvlch7pvCbYWZLtCC58FXMTzqLVE0m_Rr6Wyvbg-6ziecRXnb6jshynx9d4pSdfrzAm-BA6l1QUEGjDvYlC1BT2KcQo1qhqqb0zTQR3p9021sUCq_UUeL5NkuhvnsWj4RArwhpljfcnj4joJ9vf2iu34"/>
+<div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<button class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 glass-panel px-6 py-2 rounded-full font-label-md text-label-md text-on-surface hover:bg-white hover:text-primary">
+                            Quick Add
+                        </button>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="font-caption text-caption text-on-surface-variant mb-1 uppercase tracking-wider">AURA Tech</p>
+<h3 class="font-title-md text-title-md text-on-surface">Acoustic Over-Ears</h3>
+</div>
+<span class="font-body-md text-body-md text-primary font-medium">$340</span>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="group product-card relative flex flex-col hover-lift">
+<div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-surface-container-low mb-4">
+<img class="w-full h-full object-cover product-image-zoom" data-alt="An elegant, slender glass perfume bottle with a slightly iridescent fluid inside, standing on a white marble plinth. The background is an expansive, bright white void. Light refracts through the glass, creating a subtle prismatic effect that aligns with a high-end, clean aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa4KGiMB8XzUXbnN5WbxmTQVW5wTrcGPYTFHCEorhfu1dpeG6HkGIZMW1A6c31R5HgbBubsKnFw5ltGclzexlTP5ivlNhD0ZiuZg9q5FblW5LTNrc13SjgTvWWvu_ECl-bA9aD3d8Immqm0ixoLPAnyEKDn5j2Y8mbyGWWiQFhiBdOElJv-F0ArftjaKfjONKTvdMRNpMlzBxlbs9osXHtIhv7IPXZGoW2BPQLj8RcJdnEidX5ibvyNDup8yKSHQVnVwDa0uoKTVm3"/>
+<div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<button class="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 glass-panel px-6 py-2 rounded-full font-label-md text-label-md text-on-surface hover:bg-white hover:text-primary">
+                            Quick Add
+                        </button>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="font-caption text-caption text-on-surface-variant mb-1 uppercase tracking-wider">AURA Beauty</p>
+<h3 class="font-title-md text-title-md text-on-surface">Signature Fragrance</h3>
+</div>
+<span class="font-body-md text-body-md text-primary font-medium">$150</span>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-16 flex justify-center items-center gap-2 font-body-md text-body-md">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors disabled:opacity-50"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-on-primary font-medium">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors">3</button>
+<span class="text-on-surface-variant">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors">8</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-section-gap pb-12 bg-surface-container-lowest dark:bg-surface-dim border-t border-outline-variant/30">
+<div class="max-w-container-max mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface">AURA</div>
+<div class="flex flex-wrap justify-center gap-6 font-caption text-caption">
+<a class="text-on-surface-variant dark:text-outline hover:text-primary transition-colors opacity-100 hover:opacity-70" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-outline hover:text-primary transition-colors opacity-100 hover:opacity-70" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-outline hover:text-primary transition-colors opacity-100 hover:opacity-70" href="#">Shipping &amp; Returns</a>
+<a class="text-on-surface-variant dark:text-outline hover:text-primary transition-colors opacity-100 hover:opacity-70" href="#">Contact Us</a>
+</div>
+<div class="font-caption text-caption text-on-surface-variant dark:text-outline">
+                © 2024 AURA Prismatic Precision. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

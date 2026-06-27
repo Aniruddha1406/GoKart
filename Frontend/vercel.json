@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:match*",
+      "destination": "http://ecommerce-alb-660851368.ap-south-1.elb.amazonaws.com/api/:match*"
+    }
+  ]
+}
